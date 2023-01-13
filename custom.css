@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css?family=Nova+Slim&display=swap");
+
+body,
+html {
+  line-height: 1.8;
+  font-family: "Roboto", sans-serif;
+  color: #555e58;
+  text-transform: capitalize;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+}
+
+#txtSODate
+{
+  z-index: 999;
+}
+#txtDispatchDate
+{
+  z-index: 1000;
+}
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"),
+    url(https://example.com/MaterialIcons-Regular.woff) format("woff"),
+    url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+
+#sidebar {
+  position: fixed;
+  height: 100vh !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 260px;
+  overflow: auto;
+  transition: all 0.3s;
+  background: #ffffff;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%),
+    0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+#content {
+  width: calc(100% - 260px);
+  position: relative;
+  float: right;
+  transition: all 0.3s;
+  background-color: #d8b4b4;
+}
+
+.navbar {
+  z-index: 11;
+  margin-left: 260px;
+}
+
+#sidebar::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+  background-color: #eee;
+  display: none;
+}
+
+#sidebar::-webkit-scrollbar-thumbs {
+  width: 5px;
+  border-radius: 10px;
+  background-color: #333;
+  display: none;
+}
+
+#sidebar:hover::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar:hover::-webkit-scrollbar-thumbs {
+  display: none;
+}
+
+#sidebar .sidebar-header {
+  padding: 0px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-header h3 {
+  color: #333;
+  font-size: 27px;
+  margin: 0px;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+  font-weight: 600;
+}
+
+.sidebar-header h3 img {
+  width: 78px;
+  height: 75px;
+  margin-right: 10px;
+}
+
+#sidebar ul li {
+  padding: 2px 7px;
+}
+
+#sidebar ul li.active>a {
+  color: #333;
+  background-color: rgba(200, 200, 200, 0.2);
+}
+
+#sidebar ul li a:hover {
+  color: #333;
+  background-color: rgba(200, 200, 200, 0.2);
+}
+
+/* styles for .dropdown-menu(icon) */
+.dropdown-toggle::after {
+  position: absolute;
+  right: 5px;
+  top: 27px;
+}
+
+#sidebar ul.components {
+  padding: 10px 0px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  line-height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  position: relative;
+  font-weight: 400;
+  display: block;
+}
+
+#sidebar ul li a i {
+  position: relative;
+  margin-right: 10px;
+  top: 5px;
+  color: #555555;
+  margin-left: 10px;
+}
+
+#content {
+  position: relative;
+  transition: all 0.3s;
+  background-color: #b8bda2;
+}
+
+.top-navbar {
+  z-index: 11;
+  position: relative;
+}
+
+.main-content {
+  padding: 50px 20px 0px 20px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+}
+
+.navbar {
+  background-color: #eaf0f6;
+  color: #dde7f2;
+}
+
+/* ------------------------- */
+.navbar button {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar button span {
+  color: #3f48b9;
+}
+
+/* -------------------------------------------------------------- */
+
+/* ------nav flex-direction:row,padding----------- */
+.navbar-nav {
+  flex-direction: row;
+  padding: 0 10px 5px 20px;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-nav .nav-item {
+  padding: 10px 10px 10px 10px;
+}
+
+.navbar-nav li {
+  padding: 15px 10px 10px 20px;
+}
+
+/* -------------------------------------------------------*/
+
+/* button for sidebar collapse */
+#sidebarCollapse {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  margin-right: 20px;
+  border: none;
+  color: #259199;
+}
+
+/*=============================================
+
+  footer
+  =========================================*/
+.footer {
+  border-top: 1px solid #e7e7e7;
+  background-color: #dde7f2;
+}
+
+footer {
+  padding: 5px 0px 2px 0;
+  position: relative;
+  width: 100%;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+footer ul li a {
+  color: inherit;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+/* transform:translatex(0%); #to move sidebar right in small screen  */
+/*  refer script fo side-nav*/
+#sidebar.show-nav {
+  transform: translatex(0%);
+  opacity: 1;
+  display: none;
+  z-index: 12;
+}
+
+.body-overlay.show-nav {
+  transform: translatex(0%);
+  opacity: 1;
+  display: none;
+  z-index: 10;
+}
+
+.navbar button span {
+  color: #4e9af7;
+  border: #f0d9d9;
+}
+
+/* MEDIAQUERIES */
+
+/* sidebar, navbar, content display after toggle (dispay:block-important! ) */
+@media only screen and (min-width: 992px) {
+  #sidebar.active {
+    width: 80px;
+    height: 100% !important;
+    position: fixed !important;
+    overflow: visible !important;
+    top: 0 !important;
+    z-index: 1;
+    float: left !important;
+    display: block;
+    bottom: 0 !important;
+  }
+
+  #content.active {
+    width: calc(100% - 80px);
+  }
+
+  /* size of navbar after toggle */
+  #sidebar.active~#content .navbar {
+    margin-left: 80px;
+  }
+
+  /* --------------------------------------------------------------- */
+  /* TO HIDE NAMES IN SIDEBAR , YOU NEED TO GIVE SIDEBAR MENU NAMES IN <span>!!!!!!!!!!!!!!!!IMPORTANT */
+  /* to hide sidebar header(brand name) while toggle */
+  #sidebar.active .sidebar-header h3 span {
+    display: none;
+    transition: all 0.5s ease;
+  }
+
+  /* to hide sidebar menu names while toggle */
+  #sidebar.active ul li a span {
+    display: none;
+    transition: all 0.5s ease;
+  }
+
+  /* to hide sidebar dropdown ICON while toggle */
+  #sidebar.active .dropdown-toggle::after {
+    display: none;
+    transition: all 0.5s ease;
+  }
+
+  /* ----------drop down menu items display styles after toggle---------------------------------- */
+  #sidebar.active .menu {
+    position: absolute;
+    left: 81px;
+    background-color: rgb(184, 190, 193);
+    width: 180px;
+    height: auto;
+    margin: 5px 0;
+    top: 0;
+    border: 1px solid #dcd9d9;
+    z-index: 4;
+  }
+}
+
+@media only screen and (max-width: 308px){
+  .navbar-nav {
+    flex-direction: row;
+    padding: 0 10px 0px 20px;
+    margin-bottom: 0;
+    margin-left: 0;
+    list-style: none;
+  }
+  
+  .navbar-nav .nav-item {
+    padding: 0px 10px 0px 0px;
+    margin-left: 0;
+  }
+  
+  .navbar-nav li {
+    padding: 0px 10px 0px 0px;
+    margin-left: 0;
+  }
+}
+
+/*===============small-screen overlay sidebar design media queries==============*/
+
+@media only screen and (max-width: 992px) {
+  #sidebar {
+    position: fixed;
+    height: 100vh !important;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    width: 260px;
+    overflow: auto;
+    background: #e4e7eb;
+    box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%),
+      0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  }
+
+  #content {
+    width: 100%;
+    position: relative;
+    float: right;
+    transition: all 0.3s;
+    background-color:  #bec997;
+  }
+
+  .navbar {
+    z-index: 11;
+    margin-left: 0;
+  }
+
+  .sidebar-header h3 {
+    color: #333;
+    font-size: 27px;
+    margin: 0px;
+    text-transform: uppercase;
+    transition: all 0.1s ease;
+    font-weight: 600;
+  }
+
+  .sidebar-header h3 img {
+    width: 50px;
+    height: 45px;
+    margin-right: 10px;
+  }
+
+}
+
+/* fa color */
+#sidebar .fa {
+  color: #b8bda2;
+}
+
+
+/* navbar */
+#navcolor{
+  padding: 0px 4px 3px 0px;
+  color: #448e70;
+}
+
+footer{
+  padding: 0px 0px 0px 0px;
+}
+
+#homepage{
+  padding: 500px 0px 25px 15px;
+  margin-top: 50%;
+}
+#myTable
+{
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+
+
+.main-container {
+  padding: 6rem;
+}
+
+.card-block {
+  padding: 1.5rem;
+}
+
+.form-group {
+  padding: 10px;
+}
+
+.col-form-label {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.table1 {
+  padding: 50px;
+}

@@ -1,0 +1,620 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .page-body {
+        padding: 5rem 8px 8px 8px;
+    }
+
+    .card-block {
+        padding: 1.5rem;
+    }
+
+    .form-group {
+        padding: 10px;
+    }
+
+    .col-form-label {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .table1 {
+        padding: 50px;
+    }
+</style>
+
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>
+                <img src="{% static 'css/images.jpeg' %}" class="img-fluid" /><span>LOGO</span>
+            </h3>
+        </div>
+        <div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" class="dashboard"><i class="fa fa-home me-3"></i><span>Dashboard</span></a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa fa-id-badge me-3" aria-hidden="true"></i><span>Layouts</span></a>
+                    <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa fa-box me-3"></i><span>Bootstrap</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu2">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa fa-zap me-3"></i>
+
+                        <span>chart</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu3">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa fa-solid fa-layer-group me-3"></i><span>ui element</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu4">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pageSubmenu5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa fa-shopping-bag me-3"></i><span>forms</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu5">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pageSubmenu6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa fa-address-book me-3" aria-hidden="true"></i><span>tables</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu6">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#pageSubmenu7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fa fa-window-restore" aria-hidden="true"></i><span>Pages</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu7">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i><span>copy</span></a>
+                </li>
+
+                <li class="">
+                    <a href="#"><i class="fa fa-id-card me-3" aria-hidden="true"></i><span>Calender</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="content">
+        <div class="header">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navcolor">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-block d-sm-block">
+                        <i class="fa-solid fa-align-justify fa-lg"></i>
+                    </button>
+                    <button class="d-inline-block d-lg-none ml-auto more-button" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="material-icons">more_vert</span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="ml-5">
+                            <li style="list-style: none; margin-top: 1rem">
+                                <form class="input-group px-3 pt-0">
+                                    <input autocomplete="off" type="search" class="form-control rounded"
+                                        placeholder="Search for results" style="min-width: auto" />
+                                    <span class="input-group-text border-0"><i class="fa fa-search"></i></span>
+                                </form>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav" id="menu">
+
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#!"><i class="fa fa-globe fa-lg"></i></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!"><i class="fa fa-shopping-cart fa-lg"></i><span
+                                        class="position-absolute top-1 p-1 start-90 translate-middle badge rounded-pill bg-info">
+                                        10</span></a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"><i
+                                        class="fa fa-bell fa-lg text_primary"></i><span
+                                        class="position-absolute top-2 start-90 translate-middle p-1 bg-success border border-light rounded-circle"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">
+                                    <i class="fa fa-envelope-square fa-lg"></i><span
+                                        class="position-absolute top-2 start-90 translate-middle p-1 bg-danger border border-light rounded-circle"></span></a>
+                            </li>
+                            <li class="nav-item me-3 me-lg-1"><a class="nav-link" href="#!"><img
+                                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                                        class="rounded-circle" height="22" alt="Avatar" /></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                        class="fa fa-align-right fa-lg"></i></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"><i
+                                        class="fa fa-gear fa-spin text_primary"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#!">View Demo</a>
+                                    <a class="dropdown-item" href="#!">Buy Now</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#!">Our Portfolio</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="page-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="alert alert-primary text-center" id="contextmsg">{{s}}</h4>
+                            {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-primary text-center" id="txtmesssage" role="alert">
+                                {{ message }}</div>
+                            {% endfor %}
+                            {% endif %}
+                            <h4 class="card-title">Create Page</h4>
+                            <div class="card-block">
+                                <form action="{% url 'create' %}" enctype="multipart/form-data" method="POST" id="form1"
+                                    onsubmit="return validate()">
+                                    {% csrf_token %}
+                                    <div class="row" id="divSparesInquiry">
+                                        <div class="col-sm-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> Inquiry Through</label>
+                                                <div class="col-sm-8">
+                                                    <select name="txtThrough" id="txtThrough"
+                                                        value="{{sdata.enquirythrough}}"
+                                                        title="please enter Inquiry through"
+                                                        class="form-select select2-hidden-accessible"
+                                                        style="border-left-color: rgb(218, 37, 28);">
+                                                        <option value="">Select Inquiry Through </option>
+                                                        <option value="Customeremail">Customeremail</option>
+                                                        <option value="Engineeremail">Engineeremail</option>
+                                                    </select>
+                                                    <p style="color: red;">{{ERROR.enquirythrough|join:''}}</p>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Customer </label>
+                                                    <div class="col-sm-8">
+                                                        <select name="txtCustomer" id="txtCustomer"
+                                                            value="{{sdata.customer}}"
+                                                            class="form-select select2-hidden-accessible"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                            <option value="">Select Customer </option>
+                                                            <option value="Customer1">Customer1</option>
+                                                            <option value="Customer2">Customer2</option>
+                                                        </select>
+                                                        <p style="color: red;">{{ERROR.customer|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Region</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="txtRegion" id="txtRegion" value="{{sdata.region}}"
+                                                            class="form-select select2-hidden-accessible"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                            <option value="">Select Region </option>
+                                                            <option value="In-w">In-w</option>
+                                                            <option value="In-s">In-s</option>
+                                                        </select>
+                                                        <p style="color: red;">{{ERROR.region|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">Product</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="txtProduct" id="txtProduct"
+                                                            value="{{sdata.product}}" class="form-select"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                            <option value="0">select Product</option>
+                                                            {% if sdata.product %}
+                                                            <option selected value="{{sdata.product}}">{{sdata.product}}
+                                                            </option>
+                                                            {% else %}
+                                                            {% for data in response2 %}
+                                                            <option value="{{data.product_id}}">{{data.product}}
+                                                            </option>
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                        </select>
+                                                        <p style="color: red;">{{ERROR.product|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">
+                                                        Model</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="txtModel" id="txtModel"
+                                                            value="{{sdata.modelname}}" class="form-select"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                            <option value="0">select Model</option>
+                                                            {% if sdata.product %}
+                                                            <option selected value="{{sdata.Model}}">{{sdata.Model}}
+                                                            </option>
+                                                            {% else %}
+                                                            {% for data in response3 %}
+                                                            <option value="{{data.model_id}}">
+                                                                {{data.modelname}}</option>
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                        </select>
+                                                        <p style="color: red;">{{ERROR.modelname|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Module</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="txtModule" id="txtModule" value="{{sdata.module}}"
+                                                            class="form-select"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                            <option value="0">select Module</option>
+                                                            {% if sdata.product %}
+                                                            <option selected value="{{sdata.module}}">{{sdata.module}}
+                                                            </option>
+                                                            {% else %}
+                                                            {% for data in response4 %}
+                                                            <option value="{{data.module_id}}">
+                                                                {{data.module}}</option>
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                        </select>
+                                                        <p style="color: red;">{{ERROR.module|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Item Part</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="txtitempart" id="txtitempart"
+                                                            value="{{sdata.itempart}}"
+                                                            class="form-select select2-hidden-accessible"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                            <option value="">Select Item Part </option>
+                                                            <option value="IP 1234">IP 1234</option>
+                                                        </select>
+                                                        <p style="color: red;">{{ERROR.itempart|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Quantity</label>
+                                                    <div class="col-sm-8">
+                                                        <input id="txtQuantity" name="txtQuantity" type="text"
+                                                            value="{{sdata.quantity}}" class="form-control"
+                                                            placeholder="Enter quantity" title="Please Enter Quantity"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                        <p style="color: red;">{{ERROR.quantity|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Item Description</label>
+                                                    <div class="col-sm-8">
+                                                        <input id="txtItemDesc" name="txtItemDesc" type="text"
+                                                            value="{{sdata.itemdescription}}" class="form-control"
+                                                            placeholder="Enter item description"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                        <p style="color: red;">{{ERROR.itemdescription|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Person Name</label>
+                                                    <div class="col-sm-8">
+                                                        <select name="textname" id="textname"
+                                                            value="{{sdata.personname}}"
+                                                            class="form-select select2-hidden-accessible" control="ddl"
+                                                            title="Please Select Person Name" tabindex="-1"
+                                                            aria-hidden="true"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                            <option value="">Select Engineer </option>
+                                                            <option value="selva">selva</option>
+                                                            <option value="raghu">raghu</option>
+                                                        </select>
+                                                        <p style="color: red;">{{ERROR.personname|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Quotation Ref. No</label>
+                                                    <div class="col-sm-8">
+                                                        <input id="txtQuotationRefNo" name="txtQuotationRefNo"
+                                                            type="text" value="{{sdata.qrefno}}" class="form-control"
+                                                            placeholder="Enter quotation reference number"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                        <p style="color: red;">{{ERROR.qrefno|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label"> Quotation Date</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" type="text" name="txtQuotationDate"
+                                                            value="{{sdata.qdate}}" id="txtQuotationDate"
+                                                            readonly="readonly" control="date" setdate="yes"
+                                                            title="Please select Quotation Date"
+                                                            style="border-left-color: rgb(218, 37, 28);">
+                                                        <p style="color: red;">{{ERROR.qdate|join:''}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> PO Ref. No</label>
+                                                <div class="col-sm-8">
+                                                    <input id="txtRefNo" name="txtRefNo" type="text"
+                                                        class="form-control" value="{{sdata.porefno}}"
+                                                        placeholder="Enter PO reference number"
+                                                        style="border-left-color: rgb(218, 37, 28);">
+                                                    <p style="color: red;">{{ERROR.porefno|join:''}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> PO Status</label>
+                                                <div class="col-sm-8">
+                                                    <div class="checkbox-fade fade-in-primary">
+                                                        <label>
+                                                            <input type="checkbox" name="chkpostatus" id="chkpostatus">
+                                                            <input type="hidden" value="" name="hiddenchkpostatus"
+                                                                id="hiddenchkpostatus">
+                                                            <span>Received / Not Received</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> Sales Order Ref. No</label>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" id="txtSORefNo" name="txtSORefNo"
+                                                        type="text" value="{{sdata.sorefno}}" class="form-control"
+                                                        placeholder="Enter SO reference number"
+                                                        style="border-left-color: rgb(218, 37, 28);">
+                                                    <p style="color: red;">{{ERROR.sorefno|join:''}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> Sales Order Date</label>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" value="{{sdata.sodate}}" type="text" name="txtSODate"
+                                                        id="txtSODate" readonly="readonly" control="date" setdate="yes"
+                                                        title="Please select Quotation Date"
+                                                        style="border-left-color: rgb(218, 37, 28);">
+                                                        <p style="color: red;">{{ERROR.sodate|join:''}}</p>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> Payment Status</label>
+                                                <div class="col-sm-8">
+                                                    <div class="checkbox-fade fade-in-primary">
+                                                        <label>
+                                                            <input type="checkbox" name="chkpaystatus"
+                                                                id="chkpaystatus">
+                                                            <input type="hidden" value="0" name="hiddenchkpayment"
+                                                                id="hiddenchkpayment">
+                                                            <span>Received / Not Received</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> Payment Value</label>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" type="text" name="txtPayment"
+                                                        value="{{sdata.paymentvalue}}" id="txtPayment"
+                                                        style="border-left-color: rgb(218, 37, 28);">
+                                                    <p style="color: red;">{{ERROR.paymentvalue|join:''}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> Dispatch Status</label>
+                                                <div class="col-sm-8">
+                                                    <div class="checkbox-fade fade-in-primary">
+
+                                                        <label>
+                                                            <input type="checkbox" name="chkdispatch" id="chkdispatch">
+                                                            <input type="hidden" value="" id="hiddenchkdispatch"
+                                                                name="hiddenchkdispatch">
+                                                            <span>Dispatched / Not Dispatched</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label"> Dispatch Date</label>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" type="text" 
+                                                         name="txtDispatchDate"
+                                                        id="txtDispatchDate" readonly="readonly" value="{{sdata.ddate}}" control="date"
+                                                        setdate="yes" title="Please select Quotation Date"
+                                                        style="border-left-color: rgb(218, 37, 28);">
+                                                        <p style="color: red;">{{ERROR.ddate|join:''}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label">Duration</label>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" type="text" name="txtDuration" 
+                                                        value="{{sdata.duration}}" id="txtDuration" readonly="readonly"
+                                                        style="border-left-color: rgb(218, 37, 28);">
+                                                    <p style="color: red;">{{ERROR.duration|join:''}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <button type="submit" value="submit" id="btnsave"
+                                                    class="btn btn-success">Save</button>
+                                                <button type="button" id="btnClear" onclick="clearFields()"
+                                                    value="Clear" class="btn btn-danger">Clear</button>
+                                                <!-- <button type="button" id="btnClear" class="btn btn-danger">Clear</button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Spares Status List</h5>
+                        </div>
+                        <div class="card-block">
+                            <div class="dt-responsive table-responsive">
+                                <table id="tblSpares" class="table table-striped table-bordered nowrap">
+                                    <thead>
+                                        <tr class="text-capitalize">
+                                            <th>S.NO</th>
+                                            <th>Customer</th>
+                                            <th>Region</th>
+                                            <th>product</th>
+                                            <th>Model</th>
+                                            <th>PO reference</th>
+                                            <th>Item</th>
+                                            <th>Payment status</th>
+                                            <th>Dispatch status</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for data in response1 %}
+                                        <tr>
+                                            <td style="padding:10px;">{{forloop.counter}}</td>
+                                            <td style="padding:10px;">{{data.customer}}</td>
+                                            <td style="padding:10px;">{{data.region}}</td>
+                                            <td style="padding:10px;">{{data.product_id.product}}
+                                            </td>
+                                            <td style="padding:10px;">{{data.model_id.modelname}}
+                                            </td>
+                                            <td style="padding:10px;">{{data.porefno}}</td>
+                                            <td style="padding:10px;">{{data.itempart}}</td>
+                                            {% if data.pstatus == True %}
+                                            <td>Received</td>
+                                            {% else %}
+                                            <td>NotReceived</td>
+                                            {% endif %}
+                                            {% if data.dstatus == True %}
+                                            <td>Dispatched</td>
+                                            {% else %}
+                                            <td>NotDispatched</td>
+                                            {% endif %}
+                                            <td>
+                                                <button type="button" class="btn btn-success"
+                                                    onclick="binding('{{data.id}}')">
+                                                    edit
+                                                </button>
+                                            </td>
+                                            <td style="padding:10px;"><a href="{% url 'delete' data.id %}"
+                                                    class="btn btn-danger"
+                                                    onclick="return confirm('do you want to delete?')">Delete</a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
